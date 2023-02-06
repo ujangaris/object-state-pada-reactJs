@@ -5,7 +5,7 @@ const Object = () => {
     merk: "Honda",
     tipe: "Beat",
     warna: "Hitam",
-    bensin: 20,
+    bensin: 5,
     harga: 10000000,
     plat: "B 1234 ABC",
     status: "OFF",
@@ -20,13 +20,14 @@ const Object = () => {
             status: "OFF",
             peringatan: "Bensin Habis!",
           }
-        } else {
+        } else if (data.bensin <= 5) {
           console.log("nyalakan mesin")
           return {
             // spread operator
             ...data,
             status: "ON",
-            bensin: data.bensin - 5,
+            bensin: data.bensin - 1,
+            peringatan: "-",
           }
         }
       })
@@ -37,6 +38,23 @@ const Object = () => {
         return {
           ...data,
           status: "OFF",
+        }
+      })
+    },
+    isiBensin: () => {
+      setMtr((data) => {
+        if (data.bensin === 4) {
+          return {
+            ...data,
+            bensin: data.bensin + 1,
+            peringatan: "Bensin Penuh",
+          }
+        } else {
+          return {
+            ...data,
+            bensin: data.bensin + 1,
+            peringatan: "-",
+          }
         }
       })
     },
@@ -66,12 +84,15 @@ const Object = () => {
         <li> Harga: {mtr.harga} </li> <li> Plat: {mtr.plat} </li>{" "}
         <li> Status: {mtr.status} </li> <li> pringatan: {mtr.peringatan} </li>{" "}
       </ul>{" "}
-      <button onClick={() => mtr.nyalakan()} disabled={mtr.status == "ON"}>
+      <button onClick={() => mtr.nyalakan()} disabled={mtr.status === "ON"}>
         {" "}
         Nyalakan Mesin{" "}
       </button>{" "}
-      <button onClick={mtr.matikan} disabled={mtr.status == "OFF"}>
+      <button onClick={mtr.matikan} disabled={mtr.status === "OFF"}>
         Matikan
+      </button>
+      <button onClick={mtr.isiBensin} disabled={mtr.bensin === 5}>
+        isi bensin
       </button>
     </div>
   )

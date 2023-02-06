@@ -27,3 +27,13 @@
               ketika diklik akan membuat status menjadi 'OFF
             - kondisi jika bensi 0, maka akan tampil pesan peringatan
             - disable untuk tiap button dengan kondisi
+
+## setState pada functin isiBensin() & memasang kondisi
+
+    Todo:
+        1. Object.js
+            - merubah peringatan '-'  atau 'bensin penuh'  memasang function matikan()
+              yang didalamnya terdapat setState yang terhubung dengan tombol button
+              ketika diklik akan membuat peringatan menjadi '-' atau 'bensin penuh'
+            - kondisi jika bensi 5, maka akan tampil pesan peringatan : 'bensin penuh'
+            - disable untuk button dengan kondisi bensin penuh
