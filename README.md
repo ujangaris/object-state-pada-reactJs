@@ -9,3 +9,11 @@
             Import & panggil component Object yang sudah kita buat
         3. Liat pada browser dan console
             dapat dilihat untuk nilai dari property status masih belum berubah 'ON' walaupun button sudah di klik.
+
+## State nyalakan mesin dan bensin
+
+    Todo:
+        1. Object.js
+            buat state dan setState untuk menampilkan mengubah status,
+            serta gunakan  spread operator agar data lamanya tidak tertimpa dengan setState
+        2. pada browser ketika tombol nyalakan di klik , status akan jd 'ON' dan bensin akan berkurang 5L jadi 15L

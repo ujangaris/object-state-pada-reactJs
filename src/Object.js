@@ -1,11 +1,34 @@
-import React from "react"
+import React, { useState } from "react"
 const Object = () => {
+  let [mtr, setMtr] = useState({
+    // property
+    merk: "Honda",
+    tipe: "Beat",
+    warna: "Hitam",
+    bensin: 20,
+    harga: 10000000,
+    plat: "B 1234 ABC",
+    status: "OFF",
+    // method
+    nyalakan: () => {
+      console.log("nyalakan mesin")
+      //   jalankan setState untuk merubah data
+      setMtr((data) => {
+        return {
+          // spread operator
+          ...data,
+          status: "ON",
+          bensin: data.bensin - 5,
+        }
+      })
+    },
+  })
   const motor = {
     // property
     merk: "Honda",
     tipe: "Beat",
     warna: "Hitam",
-    bensin: "Pertamax",
+    bensin: 20,
     harga: 10000000,
     plat: "B 1234 ABC",
     status: "OFF",
@@ -18,17 +41,14 @@ const Object = () => {
   }
   return (
     <div>
-      <h1>Motor</h1>
+      <h1> Motor </h1>{" "}
       <ul>
-        <li>Merk: {motor.merk}</li>
-        <li>Tipe: {motor.tipe}</li>
-        <li>Warna: {motor.warna}</li>
-        <li>Bensin: {motor.bensin}</li>
-        <li>Harga: {motor.harga}</li>
-        <li>Plat: {motor.plat}</li>
-        <li>Status: {motor.status}</li>
-      </ul>
-      <button onClick={() => motor.nyalakan()}>Nyalakan Mesin</button>
+        <li> Merk: {mtr.merk} </li> <li> Tipe: {mtr.tipe} </li>{" "}
+        <li> Warna: {mtr.warna} </li> <li> Bensin: {mtr.bensin}L </li>{" "}
+        <li> Harga: {mtr.harga} </li> <li> Plat: {mtr.plat} </li>{" "}
+        <li> Status: {mtr.status} </li>{" "}
+      </ul>{" "}
+      <button onClick={() => mtr.nyalakan()}> Nyalakan Mesin </button>{" "}
     </div>
   )
 }
