@@ -37,3 +37,11 @@
               ketika diklik akan membuat peringatan menjadi '-' atau 'bensin penuh'
             - kondisi jika bensi 5, maka akan tampil pesan peringatan : 'bensin penuh'
             - disable untuk button dengan kondisi bensin penuh
+
+## Event Handling pada rectJs
+
+    Todo:
+        1. Event.js
+            - onCLick() , ketika diklik akan melakukan aksi
+            - onMouseEnter() , ketika di arahkan mousenya pada target akan melakukan aksi
+            - onMouseOut(), ketika mouse menjauh dari aksi akan melakukan aksi
